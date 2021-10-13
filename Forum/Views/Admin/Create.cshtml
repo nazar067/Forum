@@ -1,0 +1,17 @@
+﻿@model Forum.Models.Theme
+<div style="height: 558px; width: 1400px; background-size: 100% 100%; background-image: url(https://wallpaper.dog/large/5486507.png) ">
+<form method="post"> 
+    <div style="margin-bottom:20px">
+        @Html.HiddenFor(x => x.Id)
+        <div style="display:block">
+            <div>@Html.LabelFor(x => x.Title)</div>
+            @Html.TextAreaFor(x => x.Title)
+        </div>
+        <div>
+            <div>@Html.LabelFor(x => x.Description)</div>
+            @Html.TextAreaFor(x => x.Description)
+        </div>
+    </div>
+    <input type="submit" value="Save" style="width:17.5%; background-color:greenyellow; border-radius:10px" />
+</form>
+</div>

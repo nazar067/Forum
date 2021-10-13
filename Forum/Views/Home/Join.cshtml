@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Forum.Models.Message>
+
+<input type="hidden" value="@ViewBag.Id" name="Id" />
+<input type="hidden" value="@ViewBag.Title" name="Title" />
+@foreach (var message in Model)
+{
+    <div style="display:flex; margin-bottom: 20px">
+    <div>
+        @message.Messages
+        <hr />
+    </div>
+    <div style="margin-left:100px"><a href="~/Home/Send/@message.Id/@message.Themenames" class="btn btn-secondary">Comment</a></div>
+    </div>
+}

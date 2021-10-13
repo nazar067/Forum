@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Forum.Models.User>
+
+<h1>Settings</h1>
+@foreach (var user in Model)
+{
+    <a href="~Account/ChangePassword/@user.Id" class="btn btn-warning">Edit</a>
+}

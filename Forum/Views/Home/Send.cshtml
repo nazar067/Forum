@@ -1,0 +1,16 @@
+﻿@model Forum.Models.Message
+
+<div>
+    <h3>Write</h3>
+    <form method="post">
+        <input type="hidden" value="@ViewBag.Id" name="Id" />
+        <input type="hidden" value="@ViewBag.Themenames" name="Themenames" />
+        @Html.HiddenFor(x => x.Id)
+        @Html.HiddenFor(x => x.Themenames)
+        <div class="form-group"> 
+            @Html.LabelFor(x => x.Messages)
+            @Html.TextAreaFor(x => x.Messages)
+        </div>
+        <input type="submit" value="Send" />
+    </form>
+</div>

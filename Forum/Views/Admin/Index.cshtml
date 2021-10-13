@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Forum.Models.Theme>
+
+<div>
+    @Html.ActionLink("Create", "Create", "Admin", null, new { @class = "btn btn-primary" })
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var theme in Model)
+        {
+<tr>
+    <td>@theme.Title</td>
+    <td>@theme.Description</td>
+    <td>
+        <a asp-controller="Admin" asp-action="Create" asp-route-themeId="@theme.Id" class="btn btn-warning">Edit</a>
+    </td>
+    <td>
+        <form method="post" action="~/Admin/Delete">
+            <input type="hidden" value="@theme.Id" name="themeId" />
+            <input type="submit" class="btn btn-danger" value="Delete" />
+        </form>
+    </td>
+</tr>}
+    </tbody>
+</table>

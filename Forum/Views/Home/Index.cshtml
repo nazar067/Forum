@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Forum.Models.Theme>
+
+<h2>Themes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var theme in Model)
+        {
+        <tr>
+            <td>@theme.Title</td>
+            <td>@theme.Description</td>
+            <td><a href="~/Home/Join/@theme.Id/@theme.Title" class="btn btn-success">Join</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
